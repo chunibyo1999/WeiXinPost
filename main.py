@@ -65,15 +65,7 @@ def get_Today_Week():
 
 # 获取本周课程
 def get_Week_Classes(w):
-    if w is not None:
-        week_Class = config.classes.get(w)
-    else:
-        week = get_Today_Week()
-        week_Class = config.classes.get(week)
-    
-    print("Week:", w)  # 检查传入的参数值
-    print("Week classes:", week_Class)  # 检查返回的课程信息
-    
+        week_Class = config.classes.get(1)
     return week_Class
 
 
@@ -83,21 +75,11 @@ def get_Today_Class():
     year = localtime().tm_year
     month = localtime().tm_mon
     day = localtime().tm_mday
-    today = datetime.date(datetime(year=year, month=month, day=day))
-    
-    # 在这里添加打印语句
-    print("Today:", today)  # 打印今天的日期
-    
+    today = datetime.date(datetime(year=year, month=month, day=day))  
     week_classes = get_Week_Classes(None)  # 获取本周课程
     print("Week classes:", week_classes)  # 打印本周课程
-    
     today_classes = week_classes[today.weekday()]  # 尝试获取今天的课程
-    
     return today_classes
-
-# 在调用get_Today_Class()的地方执行它，并观察输出结果
-result = get_Today_Class()
-print("Today's classes:", result)
 
 
 # 获取指定星期几的课程
