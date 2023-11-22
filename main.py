@@ -65,7 +65,7 @@ def get_Today_Week():
 
 # 获取本周课程
 def get_Week_Classes(w):
-        week_Class = config.classes.get(1)
+    week_Class = config.classes.get(1)
     return week_Class
 
 
