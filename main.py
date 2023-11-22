@@ -54,7 +54,7 @@ def get_Today_Week():
     m = config.month
     d = config.day
     startWeek = datetime(y, m, d)
-    today = datetime.today()
+    today = datetime.today().date()
     d_days = today - startWeek
     trueWeek = (d_days.days // 7) + 1
     return str(trueWeek)
@@ -76,8 +76,7 @@ def get_Today_Class():
     month = localtime().tm_mon
     day = localtime().tm_mday
     today = datetime.date(datetime(year=year, month=month, day=day))
-    todayc=get_Week_Classes(None)
-    todayClasses = todayc[today.weekday()]
+    todayClasses = get_Week_Classes(None)[today.weekday()]
     return todayClasses
 
 
