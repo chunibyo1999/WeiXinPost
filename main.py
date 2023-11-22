@@ -65,10 +65,7 @@ def get_Today_Week():
 
 # 获取本周课程
 def get_Week_Classes(w):
-        week_Class = config.classes.get("1")
-    
-    print("Week classes:", week_Class)  # 检查返回的课程信息
-    
+    week_Class = config.classes.get("1")   
     return week_Class
 
 
