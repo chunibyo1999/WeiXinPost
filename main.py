@@ -50,14 +50,17 @@ def get_weather(province, city):
 
 # 获取今天是第几周，返回字符串
 def get_Today_Week():
-    y = int(config.year)
-    m = int(config.month)
-    d = int(config.day)
-    startWeek = datetime(y, m, d)
-    today = datetime.today()
-    d_days = today - startWeek
-    trueWeek = (d_days.days // 7) + 1
-    return str(trueWeek)
+    try:
+        y = int(config.year)
+        m = int(config.month)
+        d = int(config.day)
+        startWeek = datetime(y, m, d)
+        today = datetime.today()
+        d_days = today - startWeek
+        trueWeek = (d_days.days // 7) + 1
+        return str(trueWeek)
+    except ValueError:
+        return "Invalid date"
 
 
 # 获取本周课程
