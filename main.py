@@ -65,7 +65,7 @@ def get_Week_Classes(w):
     if w is not None:
         week_Class = config.classes.get(w)
     else:
-        week = get_Today_Week()
+        week = 3
         week_Class = config.classes.get(week)
     
     print("Week:", w)  # 检查传入的参数值
