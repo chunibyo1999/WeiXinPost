@@ -50,9 +50,9 @@ def get_weather(province, city):
 
 # 获取今天是第几周，返回字符串
 def get_Today_Week():
-    y = config.year
-    m = config.month
-    d = config.day
+    y = int(config.year)
+    m = int(config.month)
+    d = int(config.day)
     startWeek = datetime(y, m, d)
     today = datetime.today()
     d_days = today - startWeek
@@ -65,7 +65,7 @@ def get_Week_Classes(w):
     if w is not None:
         week_Class = config.classes.get(w)
     else:
-        week = 3
+        week = get_Today_Week()
         week_Class = config.classes.get(week)
     
     print("Week:", w)  # 检查传入的参数值
