@@ -54,7 +54,7 @@ def get_Today_Week():
     m = config.month
     d = config.day
     startWeek = datetime(y, m, d)
-    today = datetime.today().date()
+    today = datetime.today()
     d_days = today - startWeek
     trueWeek = (d_days.days // 7) + 1
     return str(trueWeek)
